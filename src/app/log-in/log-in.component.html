@@ -1,4 +1,4 @@
-<div class ="container-fluid">
+<!-- <div class ="container-fluid">
     <div class="row">
         <div class="col-12 md-3">
 
@@ -6,4 +6,84 @@
 
     </div>
 
-</div>
+</div> -->
+<!-- <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name"
+           required
+           [(ngModel)]="model.name" name="name">
+  </div> -->
+<div class="container-fluid">
+    <form  action="" name ="studentform" novalidate>
+        <div class="form-group">
+            <label for="username">Name</label>
+            <input type="text" name="username" id="username" ng-model="Username" placeholder="Your username" required class="form-control">
+            <span ng-show ="studentform.username.$dirty && studentform.username.$invalid">
+                <span  class="text-danger" ng-show="studentform.username.$error.required">
+                    User name is required!
+                </span>
+            </span><br>
+        </div>
+        <div class="form-group">
+            <label for="othernames"></label>
+            <input type="text" name="others" ng-model="Others" id="othername" placeholder="Your Other Names" required class="form-control"> 
+            <span ng-show ="studentform.others.$dirty && studentform.others.$invalid">
+                <span  class="text-danger" ng-show="studentform.others.$error.required">
+                    Other Names is required!
+                </span>
+            </span><br>
+        </div>
+        <div class="form-group">
+            <label for="email"></label>
+            <input type="email" name="email" ng-model="Email" id="email" placeholder="Your Email" required class="form-control"> 
+            <span ng-show ="studentform.email.$dirty && studentform.email.$invalid">
+                <span class="text-danger" ng-show="studentform.email.$error.required">
+                    Email is required!
+                </span>
+                <span class="text-danger" ng-show="studentform.email.$error.email">
+                Please Enter an email address
+                </span>
+            </span><br>
+        </div>
+
+        <div class="form-group">
+            <label for="password"></label>
+            <input type="password" name="password" id="password" ng-model="Password" placeholder="Your Password" required class="form-control"
+            ng-pattern="/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/"> 
+
+            <span ng-show ="studentform.password.$dirty && studentform.password.$invalid">
+                <span  class="text-danger" ng-show="studentform.password.$error.required">
+                    Password is required!
+                </span>
+                <span  class="text-success" ng-show="studentform.password.$valid">
+                    Password is required!<br>
+                </span>
+                <span  class="text-danger" ng-show="!studentform.password.$valid">
+                    Password input Numbers, Letters,Caps and Symbols<br>
+                </span>
+            </span><br>
+        </div>
+
+        <div class="form-group">
+            <label for="telnumber"></label>
+            <input type="tel" name="tel" ng-model="Tel" id="telnumber" placeholder="Your Tel No" required class="form-control" ng-minlength="13" ng-maxlength="13" ng-pattern="/^\+254\d{9}/"> 
+            <span ng-show ="studentform.tel.$dirty && studentform.tel.$invalid">
+                <span  class="text-danger" ng-show="studentform.tel.$error.required">
+                    Telephone number is required!
+                </span>
+                <span  class="text-danger" ng-show="studentform.tel.$error.minlength">
+                Min shoould be 13 X-ters
+                </span>
+                <span  class="text-danger" ng-show="studentform.tel.$error.maxlength">
+                    Max should be 13 X-ters
+                </span>
+                <span  class="text-danger" ng-show="studentform.tel.$error.pattern">
+                    Should have 254
+                </span>
+            </span><br>
+        </div>
+
+        <button>Button</button>
+        <button ng-disabled ="studentform.$invalid" onclick-click ="alert('OK')"; >Submit</button>
+    </form>
+</div>  

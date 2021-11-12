@@ -13,3 +13,4 @@ export class LogInComponent implements OnInit {
   }
 
 }
+// export const NG_VALIDATORS = new InjectionToken<Array<Validator|Function>>('NgValidators');

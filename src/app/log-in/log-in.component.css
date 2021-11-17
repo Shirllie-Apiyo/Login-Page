@@ -1,0 +1,18 @@
+.log {
+  color: #888585;
+  margin: 3px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+.container {
+  width: 50%;
+  height: 40%;
+}
+.btn {
+  background-color: #fb7300;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

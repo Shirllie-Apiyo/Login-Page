@@ -1,18 +1,26 @@
 .log {
   color: #888585;
-  margin: 3px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 100%;
-  text-align: center;
+  font-size: 150%;
+  text-align: start;
   font-weight: bold;
 }
 .container {
-  width: 50%;
-  height: 40%;
+  width: 55%;
+  height: 50%;
 }
 .btn {
   background-color: #fb7300;
   color: #ffffff;
   font-size: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#username {
+  padding: 2%;
+}
+#email {
+  padding: 2%;
+}
+#password {
+  padding: 2%;
 }

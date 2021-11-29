@@ -8,12 +8,14 @@
 .container {
   width: 55%;
   height: 50%;
+  margin-top: 30%;
 }
 .btn {
   background-color: #fb7300;
   color: #ffffff;
   font-size: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: none;
 }
 #username {
   padding: 2%;

@@ -1,50 +1,110 @@
 <div class="container justify-content-center mt-3">
-    <div class="mb-3 align-items-center">
-        <h4 class="log">Login to your account</h4>
+  <div class="mb-3 align-items-center">
+    <h4 class="log">Login to your account</h4>
+  </div>
+
+  <form [formGroup]="loginForm" action="" novalidate>
+    <div class="form-group mb-3">
+      <div class="form-floating">
+        <input
+          type="text"
+          id="floatingInput"
+          placeholder="Your username"
+          formControlName="username"
+          required
+          class="form-control"
+        />
+        <label for="floatingInput">User Name</label>
+      </div>
+    </div>
+    <br />
+    <div
+      *ngIf="
+        loginForm.controls['username'].invalid &&
+        (loginForm.controls['username'].dirty ||
+          loginForm.controls['username'].touched)
+      "
+      required
+      class="alert"
+    >
+      <div
+        *ngIf="loginForm.controls['username']?.errors?.required"
+        class="text-danger"
+      >
+        Please enter your username
+      </div>
     </div>
 
-    <form  [formGroup]="loginForm" action="" novalidate >
-        <div class="form-group mb-3">
-          <div class="form-floating ">
-            <input type="text" id="floatingInput" placeholder="Your username" formControlName="username" required class="form-control">
-            <label for="floatingInput">User Name</label>
-          </div>
-        </div><br>
-            <div *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)" required class="alert">
-              <div *ngIf="loginForm.controls['username'].errors" class="text-danger">
-              Please enter your username
-            </div>
-          </div>
-
-          <div class="form-group mb-3 ">
-              <div class="form-floating">
-                <input type="email" id="floatingInput" placeholder="Your Email" formControlName="email" required class="form-control">
-                <label for="floatingInput">Email</label>
-              </div>
-            </div><br>
-            <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" required class="alert">
-              <div *ngIf="loginForm.controls['email'].errors" class="text-danger">
-              Please enter your email address
-            </div>
-            </div>
-
-          <div class="form-group mb-3">
-            <div class="form-floating">
-              <input type="password" id="floatingInput" formControlName="password" placeholder="Your Password" required class="form-control">
-              <label for="floatingInput">Password</label>
-            </div>
-          </div>
-            <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" required class="alert">
-              <div *ngIf="loginForm.controls['password'].errors" class="text-danger">
-              Your password must contain numbers, letters and special characters
-            </div>
-          </div>
-
-
-        <div class="mb-3">
-        <button ng-disabled="loginForm.$invalid" onclick="alert('OK');" class=".btn.btn-primary btn" style="width: 100%;">Login to your account</button>
+    <div class="form-group mb-3">
+      <div class="form-floating">
+        <input
+          type="email"
+          id="floatingInput"
+          placeholder="Your Email"
+          formControlName="email"
+          required
+          class="form-control"
+        />
+        <label for="floatingInput">Email</label>
       </div>
+    </div>
+    <br />
+    <div
+      *ngIf="
+        loginForm.controls['email'].invalid &&
+        (loginForm.controls['email'].dirty ||
+          loginForm.controls['email'].touched)
+      "
+      required
+      class="alert"
+    >
+      <div
+        *ngIf="loginForm.controls['email']?.errors?.required"
+        class="text-danger"
+      >
+        Please enter your email address
+      </div>
+    </div>
 
-    </form>
+    <div class="form-group mb-3">
+      <div class="form-floating">
+        <input
+          type="password"
+          id="floatingInput"
+          placeholder="Your Password"
+          formControlName="password"
+          required
+          class="form-control"
+        />
+        <label for="floatingInput">Password</label>
+      </div>
+    </div>
+    <div
+      *ngIf="
+        loginForm.controls['password'].invalid &&
+        (loginForm.controls['password'].dirty ||
+          loginForm.controls['password'].touched)
+      "
+      required
+      class="alert"
+    >
+      <div
+        *ngIf="loginForm.controls['password']?.errors?.required"
+        class="text-danger"
+      >
+        Your password must contain numbers, letters and special characters
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <button
+        ng-disabled="loginForm.$invalid"
+        onclick="alert('OK');"
+        class="btn btn-primary d-flex w-100"
+        type="submit"
+      >
+        Login to your account
+      </button>
+    </div>
+  </form>
 </div>
-
